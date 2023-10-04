@@ -1,19 +1,17 @@
-import { members } from "../contans/Admin.js";
-
-export const get = (request, response) =>{
-    const {id} = request.params;
-    const Admin = members[Number(id) -1]
-    
-    if(!Admin) {
-        response.status (404);
-        response.json({
-            message: "Data not found",
-        })
-    }
+export const get = (request, response) => {
     response.json({
-        data : members[id],
-        message : "Successfully",
-    });
+        message: "Data are on the way",
+    })
 };
 
-export const post = () => {};
+export const post = (request, response) => {
+    const { email } = request.query;
+    const { password } = request.params;
+    const { user } = request.body;
+
+    response.json({
+        email,
+        password,
+        user,
+    })
+};
