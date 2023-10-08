@@ -1,0 +1,33 @@
+# POST: Membuat Produk Baru
+POST http://localhost:8080/api/products
+Content-Type: application/json
+
+{
+  "product_name": "Produk Baru",
+  "description": "Deskripsi produk baru",
+  "category_id": 1,
+  "price": 99.99,
+  "quantity": 10,
+  "product_image": "https://example.com/image.jpg"
+}
+### GET: Mendapatkan Semua Produk
+GET http://localhost:8080/products
+
+# GET: Mendapatkan Produk Berdasarkan ID
+GET http://localhost:8080/api/products/1
+
+# PUT: Memperbarui Produk Berdasarkan ID
+PUT http://localhost:8080/api/products/1
+Content-Type: application/json
+
+{
+  "Product_Name": "Produk Baru - Diperbarui",
+  "Description": "Deskripsi produk yang diperbarui",
+  "Category_ID": 2,
+  "Price": 129.99,
+  "Quantity": 15,
+  "Product_Image": "https://example.com/updated-image.jpg"
+}
+
+# DELETE: Menghapus Produk Berdasarkan ID
+DELETE http://localhost:8080/api/products/1
